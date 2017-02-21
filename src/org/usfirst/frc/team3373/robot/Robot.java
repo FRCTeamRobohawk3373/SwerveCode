@@ -41,21 +41,29 @@ public class Robot extends IterativeRobot {
 	double robotWidth = 21.125;// TODO CALIBRATE check
 	double robotLength = 33.5;// TODO CALIBRATE check
 	
-	int LBdriveChannel = 2;
-	int LBrotateID = 3;
-	int LBencOffset = 226;
+	int LBdriveChannel = 1;
+	int LBrotateID = 2;
+	int LBencOffset = 775;
+	int LBEncMin = 11;
+	int LBEncMax = 873;
 
-	int LFdriveChannel = 0;
-	int LFrotateID = 2;
-	int LFencOffset = 127;
+	int LFdriveChannel = 4;
+	int LFrotateID = 3;
+	int LFencOffset = 729;
+	int LFEncMin = 15;
+	int LFEncMax = 894;
 	
 	int RBdriveChannel = 8;
-	int RBrotateID = 0;
-	int RBencOffset = 444;
+	int RBrotateID = 7;
+	int RBencOffset = 252;
+	int RBEncMin = 12;
+	int RBEncMax = 897;
 	
-	int RFdriveChannel = 1;
-	int RFrotateID = 1;
-	int RFencOffset = 631;
+	int RFdriveChannel = 6;
+	int RFrotateID = 5;
+	int RFencOffset = 208;
+	int RFEncMin = 13;
+	int RFEncMax = 962;
 	
 	
 
@@ -71,7 +79,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData("Auto choices", chooser);
 		tester = new SuperJoystick(0);
 		//LB, LF, RB, RF
-		swerve = new SwerveControl(LBdriveChannel, LBrotateID, LBencOffset, LFdriveChannel, LFrotateID, LFencOffset, RBdriveChannel, RBrotateID, RBencOffset, RFdriveChannel, RFrotateID, RFencOffset, robotWidth, robotLength);
+		swerve = new SwerveControl(LBdriveChannel, LBrotateID, LBencOffset, LBEncMin, LBEncMax, LFdriveChannel, LFrotateID, LFencOffset, LFEncMin, LFEncMax, RBdriveChannel, RBrotateID, RBencOffset, RBEncMin, RBEncMax, RFdriveChannel, RFrotateID, RFencOffset, RFEncMin, RFEncMax, robotWidth, robotLength);
 	}
 
 	/**
